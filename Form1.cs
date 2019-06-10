@@ -61,6 +61,8 @@ namespace SMTPTester
                         UserName = txtLogin.Text.Trim(),
                         Password = txtPass.Text.Trim()
                     };
+
+                    smtp.EnableSsl = chkSSL.Checked;
                 }
 
                 var msg = new MailMessage(txtForm.Text, txtTo.Text.Trim(), "SMTP Tester", "Mail de prueba");
