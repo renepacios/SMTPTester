@@ -82,8 +82,10 @@ namespace SMTPTesterMk
                     socketOptions = SecureSocketOptions.StartTls;
 
                 }
-                
-                smtp.Connect(txtServer.Text.Trim(), intPort, socketOptions);
+
+                string server = cmbServer.Text.Trim();
+
+                smtp.Connect(server, intPort, socketOptions);
                 smtp.Authenticate(txtLogin.Text.Trim(), txtPass.Text.Trim());
                 
                 smtp.Send(msg);
@@ -97,6 +99,11 @@ namespace SMTPTesterMk
                 log(ex.InnerException?.Message);
                 MessageBox.Show("error:" + ex.Message);
             }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.txtServer = new System.Windows.Forms.TextBox();
             this.btnProbar = new System.Windows.Forms.Button();
             this.txtPort = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,6 +46,7 @@
             this.rdbAuto = new System.Windows.Forms.RadioButton();
             this.rdbUseStartTls = new System.Windows.Forms.RadioButton();
             this.rdbUseSSL = new System.Windows.Forms.RadioButton();
+            this.cmbServer = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,16 +59,6 @@
             this.label1.Size = new System.Drawing.Size(39, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Server";
-            // 
-            // txtServer
-            // 
-            this.txtServer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtServer.Location = new System.Drawing.Point(82, 12);
-            this.txtServer.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtServer.Name = "txtServer";
-            this.txtServer.Size = new System.Drawing.Size(329, 23);
-            this.txtServer.TabIndex = 0;
             // 
             // btnProbar
             // 
@@ -256,11 +246,23 @@
             this.rdbUseSSL.Text = "Use SSL";
             this.rdbUseSSL.UseVisualStyleBackColor = true;
             // 
+            // cmbServer
+            // 
+            this.cmbServer.FormattingEnabled = true;
+            this.cmbServer.Items.AddRange(new object[] {
+            "smtp.gmail.com"});
+            this.cmbServer.Location = new System.Drawing.Point(82, 12);
+            this.cmbServer.Name = "cmbServer";
+            this.cmbServer.Size = new System.Drawing.Size(328, 23);
+            this.cmbServer.TabIndex = 20;
+            this.cmbServer.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(425, 507);
+            this.Controls.Add(this.cmbServer);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtLog);
             this.Controls.Add(this.chkAnonymous);
@@ -275,7 +277,6 @@
             this.Controls.Add(this.txtPort);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnProbar);
-            this.Controls.Add(this.txtServer);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Form1";
@@ -291,7 +292,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtServer;
         private System.Windows.Forms.Button btnProbar;
         private System.Windows.Forms.TextBox txtPort;
         private System.Windows.Forms.Label label2;
@@ -309,5 +309,6 @@
         private RadioButton rdbUseStartTls;
         private RadioButton rdbUseSSL;
         private RadioButton rdbAuto;
+        private ComboBox cmbServer;
     }
 }
